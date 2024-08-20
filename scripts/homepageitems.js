@@ -14,16 +14,16 @@ products.forEach((product) => {
             <img class="product-rating-stars"
               src="images/ratings/rating-${product.rating.stars * 10}.png">
             <div class="product-rating-count link-primary">
-              ${product.rating.reviews}
+              ${product.rating.count}
             </div>
           </div>
 
           <div class="product-price">
-            $${product.priceCentsCents / 100}
+            $${product.priceCents / 100}
           </div>
 
           <div class="product-quantity-container">
-            <select>
+            <select class = 'js-selected-quantity-${product.id}' >
               <option selected value="1">1</option>
               <option value="2">2</option>
               <option value="3">3</option>
@@ -56,6 +56,9 @@ document.querySelector(".products-grid").innerHTML = productsGridHtml;
 document.querySelectorAll(".js-add-to-cart").forEach((button) => {
   button.addEventListener("click", () => {
     const productId = button.dataset.productId;
+    let selectedQuantity;
+    selectedQuantity = document.querySelector(`.js-selected-quantity-${productId}`).value;
+    selectedQuantity = Number(selectedQuantity);
     let matchingItem;
     cart.forEach((item) => {
       if (productId === item.productId) {
@@ -63,11 +66,11 @@ document.querySelectorAll(".js-add-to-cart").forEach((button) => {
       }
     });
     if (matchingItem) {
-      matchingItem.quantity += 1;
+      matchingItem.quantity += selectedQuantity;
     } else {
       cart.push({
         productId: productId,
-        quantity: 1,
+        quantity: selectedQuantity,
       });
     }
     let totalCartQuantity = 0;
@@ -79,8 +82,4 @@ document.querySelectorAll(".js-add-to-cart").forEach((button) => {
   });
 });
 
-document.querySelectorAll('.js-add-to-cart').forEach((button) => {
-  button.addEventListener('click',() => {
-    
-  })
-});
+
