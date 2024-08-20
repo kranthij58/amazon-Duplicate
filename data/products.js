@@ -656,5 +656,258 @@ const products = [
       "apparel",
       "mens"
     ]
-  }
+  },
+  // no keywords added for the below prducts
+  {
+    id: "9bb12e8f-39c1-472d-a9f5-33e8dc82b0a7",
+    image: "images/products/stainless steel waterbottle.png",
+    name: "Stainless Steel Water Bottle - 32 oz",
+    rating: {
+        stars: 4.0,
+        count: 2897
+    },
+    priceCents: 2495
+},
+{
+    id: "ce21eac4-1c34-4384-8b6b-5cf65f7c4f57",
+    image: "images/products/Bluetooth Wireless earbuds.jpeg",
+    name: "Bluetooth Wireless Earbuds - Black",
+    rating: {
+        stars: 4.5,
+        count: 1520
+    },
+    priceCents: 7999
+},
+{
+    id: "da5c11bc-4d97-43c5-87d5-8708cf6d2fc7",
+    image: "images/products/LED Desk Lamp with USB.jpeg",
+    name: "LED Desk Lamp with USB Port",
+    rating: {
+        stars: 4.0,
+        count: 732
+    },
+    priceCents: 3399
+},
+{
+    id: "84a50e0f-9a5b-4c24-9b2b-3cb0fae7d6a9",
+    image: "images/products/Organic Cotton bedsheet.jpeg",
+    name: "Organic Cotton Bed Sheets - Queen Size",
+    rating: {
+        stars: 4.5,
+        count: 1185
+    },
+    priceCents: 7995
+},
+{
+    id: "5f4963c2-4b87-4512-b660-f9ff3629b39d",
+    image: "images/products/Stainless Steel Cheif Knife.jpeg",
+    name: "Stainless Steel Chef Knife - 8 inch",
+    rating: {
+        stars: 5.0,
+        count: 4321
+    },
+    priceCents: 4599
+},
+{
+    id: "d9c8ab3f-36b2-4a85-b929-6e0d396f5bbf",
+    image: "images/products/Portable Power Bank - 10000mAh.jpeg",
+    name: "Portable Power Bank - 10000mAh",
+    rating: {
+        stars: 4.5,
+        count: 3650
+    },
+    priceCents: 2699
+},
+{
+    id: "f2a648d7-7b4a-490b-993b-80a3dcb9f4cf",
+    image: "images/products/Ceramic Coffee Mug - 12 oz.jpeg",
+    name: "Ceramic Coffee Mug - 12 oz",
+    rating: {
+        stars: 4.0,
+        count: 920
+    },
+    priceCents: 1499
+},
+{
+    id: "31ab529b-0d39-476e-8c88-25ff4a7342ff",
+    image: "images/products/USB-C to HDMI Adapter.jpeg",
+    name: "USB-C to HDMI Adapter",
+    rating: {
+        stars: 3.5,
+        count: 573
+    },
+    priceCents: 1995
+},
+{
+    id: "46bc6f95-d89d-4bda-857e-9ea8a1dc0d24",
+    image: "images/products/Wireless Gaming Mouse.jpeg",
+    name: "Wireless Gaming Mouse",
+    rating: {
+        stars: 4.5,
+        count: 2140
+    },
+    priceCents: 5999
+},
+{
+    id: "bd8a1b26-9076-41b7-8304-4acfcbe75bb7",
+    image: "images/products/Noise Cancelling Headphones.jpeg",
+    name: "Noise Cancelling Headphones",
+    rating: {
+        stars: 4.5,
+        count: 2880
+    },
+    priceCents: 12995
+},
+{
+    id: "e4ef91b1-47be-4f91-9d68-034f9e3f1d8f",
+    image: "images/products/Smart LED Light Bulb - 4 Pack.jpeg",
+    name: "Smart LED Light Bulb - 4 Pack",
+    rating: {
+        stars: 4.0,
+        count: 1750
+    },
+    priceCents: 3999
+},
+{
+    id: "7ef8f3a9-c79f-4d5f-86e3-2f17dcfc53bf",
+    image: "images/products/Eco-Friendly Bamboo Cutting Board.jpeg",
+    name: "Eco-Friendly Bamboo Cutting Board",
+    rating: {
+        stars: 4.5,
+        count: 981
+    },
+    priceCents: 2199
+},
+{
+    id: "1045c77e-dc89-496a-95ee-52948feef2e9",
+    image: "images/products/Adjustable Laptop Stand.jpeg",
+    name: "Adjustable Laptop Stand",
+    rating: {
+        stars: 4.5,
+        count: 2110
+    },
+    priceCents: 3595
+},
+{
+    id: "a34a8ae9-9ba7-4a0c-aeda-7d8f66fef34b",
+    image: "images/products/Electric Toothbrush with 3 Modes.jpeg",
+    name: "Electric Toothbrush with 3 Modes",
+    rating: {
+        stars: 4.0,
+        count: 1450
+    },
+    priceCents: 4999
+},
+{
+    id: "cfe0a5a9-4992-4713-bdf7-81e4a2a2a5a7",
+    image: "images/products/Silicone Baking Mat - 2 Pack.jpeg",
+    name: "Silicone Baking Mat - 2 Pack",
+    rating: {
+        stars: 4.5,
+        count: 610
+    },
+    priceCents: 1299
+},
+{
+    id: "d7423e5e-6df3-4547-a6ee-cd40b41d8af8",
+    image: "images/products/Wireless Charging Pad - Fast Charge.jpeg",
+    name: "Wireless Charging Pad - Fast Charge",
+    rating: {
+        stars: 4.5,
+        count: 1830
+    },
+    priceCents: 3495
+},
+{
+    id: "1a11d23f-3b74-4e04-8545-4f3d5ff5a429",
+    image: "images/products/Ergonomic Office Chair - Black.jpeg",
+    name: "Ergonomic Office Chair - Black",
+    rating: {
+        stars: 4.5,
+        count: 3452
+    },
+    priceCents: 14999
+},
+{
+    id: "e15f4fa7-3ad8-4509-a5d7-f9ecbc5e16f2",
+    image: "images/products/Stainless Steel Insulated Tumbler - 20 oz.jpeg",
+    name: "Stainless Steel Insulated Tumbler - 20 oz",
+    rating: {
+        stars: 4.0,
+        count: 825
+    },
+    priceCents: 2395
+},
+{
+    id: "5839a0e2-8dfd-4dcb-bb50-9e3e2b7527eb",
+    image: "images/products/Cordless Handheld Vacuum Cleaner.jpeg",
+    name: "Cordless Handheld Vacuum Cleaner",
+    rating: {
+        stars: 4.5,
+        count: 1935
+    },
+    priceCents: 6999
+},
+{
+    id: "2d5f965c-6a7a-4f2b-91f0-df63e4e52fc4",
+    image: "images/products/Digital Air Fryer - 4 Quar.jpeg",
+    name: "Digital Air Fryer - 4 Quart",
+    rating: {
+        stars: 4.5,
+        count: 2215
+    },
+    priceCents: 8995
+},
+{
+    id: "bfa66e39-4f5b-4bfa-a8da-b5c92b248bfa",
+    image: "images/products/Compact Travel Umbrella - Windproof.jpeg",
+    name: "Compact Travel Umbrella - Windproof",
+    rating: {
+        stars: 4.0,
+        count: 1240
+    },
+    priceCents: 1999
+},
+{
+    id: "a61f2d8d-071d-488e-a7fc-83fce6c6ea4d",
+    image: "images/products/Stainless Steel Cookware Set - 10 Piece.jpeg",
+    name: "Stainless Steel Cookware Set - 10 Piece",
+    rating: {
+        stars: 4.5,
+        count: 2875
+    },
+    priceCents: 15999
+},
+{
+    id: "6f5e7da3-1d2a-44a8-8c57-b0a0d587a6e4",
+    image: "images/products/Non-Slip Yoga Mat - 6mm Thick.jpeg",
+    name: "Non-Slip Yoga Mat - 6mm Thick",
+    rating: {
+        stars: 4.0,
+        count: 1395
+    },
+    priceCents: 2999
+},
+{
+    id: "3d971a0f-1da9-4cb8-b598-b0c6b7d10b3c",
+    image: "images/products/Rechargeable Electric Wine Opener.jpeg",
+    name: "Rechargeable Electric Wine Opener",
+    rating: {
+        stars: 4.5,
+        count: 1075
+    },
+    priceCents: 3495
+},
+{
+    id: "9baf13d3-004b-4bbf-abc4-c84f51b07bde",
+    image: "images/products/Anti-Glare Computer Screen Filter.jpeg",
+    name: "Anti-Glare Computer Screen Filter",
+    rating: {
+        stars: 4.0,
+        count: 380
+    },
+    priceCents: 2999
+},
+
+
 ];
