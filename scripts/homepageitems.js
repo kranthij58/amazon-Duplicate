@@ -1,3 +1,5 @@
+import {products} from '../data/products.js';
+import {cart , addToCart} from '../data/cart.js';
 let productsGridHtml = "";
 products.forEach((product) => {
   productsGridHtml += ` <div class="product-container">
@@ -39,7 +41,7 @@ products.forEach((product) => {
 
           <div class="product-spacer"></div>
 
-          <div class="added-to-cart">
+          <div class="added-to-cart js-added-${product.id}">
             <img src="images/icons/checkmark.png">
             Added
           </div>
@@ -57,22 +59,30 @@ document.querySelectorAll(".js-add-to-cart").forEach((button) => {
   button.addEventListener("click", () => {
     const productId = button.dataset.productId;
     let selectedQuantity;
+    let TimeoutId;
+
+    //getting the quantity from user
+
     selectedQuantity = document.querySelector(`.js-selected-quantity-${productId}`).value;
     selectedQuantity = Number(selectedQuantity);
-    let matchingItem;
-    cart.forEach((item) => {
-      if (productId === item.productId) {
-        matchingItem = item;
-      }
-    });
-    if (matchingItem) {
-      matchingItem.quantity += selectedQuantity;
-    } else {
-      cart.push({
-        productId: productId,
-        quantity: selectedQuantity,
-      });
+    
+    // calling the addToCart function from cart.js
+
+    addToCart(productId,selectedQuantity);
+
+   // displaying added message
+
+   let addedElem =  document.querySelector(`.js-added-${productId}`);
+   addedElem.classList.add('added-button');
+    if(TimeoutId !== undefined){
+      clearTimeout(TimeoutId);
     }
+    TimeoutId = setTimeout(() => {
+     addedElem.classList.remove('added-button');
+    } , 3000);
+
+  // adding elements to cart 
+
     let totalCartQuantity = 0;
     cart.forEach((item) => {
       totalCartQuantity += item.quantity;
