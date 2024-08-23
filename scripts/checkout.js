@@ -34,14 +34,13 @@ cart.forEach((cartitem) => {
           <div class="product-price">
             $${(matchingItem.priceCents /100 ).toFixed(2)}
           </div>
-          <div class="product-quantity">
+          <div class="product-quantity ">
             <span>
               Quantity: <span class="quantity-label">2</span>
             </span>
-            <span class="update-quantity-link link-primary js-update-quantity-link update-link-${matchingItem.id}" data-product-id = '${matchingItem.id}'>Update
-             <input class = "update-quantity-input"  >
-              <span class="confirm-update-link link-primary " >Save</span>
-            </span>
+            <span class="update-quantity-link link-primary js-update-quantity-link update-link-${matchingItem.id}" data-product-id = '${matchingItem.id}'>Update</span>
+            <input class = "update-quantity-input js-input-${matchingItem.id}"  >
+            <span class="confirm-update-link link-primary " data-product-id = "${matchingItem.id}" >Save</span>
             
             <span class="delete-quantity-link link-primary js-delete-link" data-product-id ="${matchingItem.id}">
               Delete
@@ -114,10 +113,17 @@ document.querySelectorAll('.js-update-quantity-link').forEach((link) => {
   link.addEventListener('click',() => {
     let productId = link.dataset.productId;
     console.log(productId);
-    document.querySelector(`.update-link-${productId}`).classList.add('is-editing-quantity');
-    // need to update the cart quantiy form the input elemt and add to cart
+    document.querySelector(`.js-item-container-${productId}`).classList.add('is-editing-quantity');
+    
   });
  
   
 });
-
+document.querySelectorAll('.confirm-update-link').forEach((saveLink) => {
+  saveLink.addEventListener('click', () => {
+    let productId = saveLink.dataset.productId;
+    console.log(productId);
+    document.querySelector(`.js-item-container-${productId}`).classList.remove('is-editing-quantity');
+  });
+  // need to update the cart quantiy form the input elemt and add to cart
+});
