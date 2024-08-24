@@ -1,13 +1,20 @@
 import { cart , removeFromCart} from "../data/cart.js";
 import { products } from "../data/products.js";
+import { saveLocalStorage } from "../data/cart.js";
 document.addEventListener('DOMContentLoaded', () => {
   document.querySelector('.total-cart-checkout').innerHTML = `${updateQunatityCheckout()} items`;
+  cart.forEach((cartitem) => {
+    document.querySelector(`.js-quantity-label-${cartitem.productId}`).innerHTML = `${cartitem.quantity}`;
+
+  });
+
 });
 function updateQunatityCheckout(){
   let totalCartQuantity = 0;
     cart.forEach((item) => {
       totalCartQuantity += item.quantity;
     });
+
     return totalCartQuantity;
 }
 let checkoutHTML = '';
@@ -36,7 +43,7 @@ cart.forEach((cartitem) => {
           </div>
           <div class="product-quantity ">
             <span>
-              Quantity: <span class="quantity-label">2</span>
+              Quantity: <span class="quantity-label js-quantity-label-${cartitem.productId}"></span>
             </span>
             <span class="update-quantity-link link-primary js-update-quantity-link update-link-${matchingItem.id}" data-product-id = '${matchingItem.id}'>Update</span>
             <input class = "update-quantity-input js-input-${matchingItem.id}"  >
@@ -107,23 +114,41 @@ link.addEventListener('click' , () => {
   removeFromCart(productId);
   document.querySelector(`.js-item-container-${productId}`).remove();
   document.querySelector('.total-cart-checkout').innerHTML = `${updateQunatityCheckout()} items`;
+  saveLocalStorage();
 });
 });
 document.querySelectorAll('.js-update-quantity-link').forEach((link) => {
   link.addEventListener('click',() => {
     let productId = link.dataset.productId;
-    console.log(productId);
+   
     document.querySelector(`.js-item-container-${productId}`).classList.add('is-editing-quantity');
+    
     
   });
  
   
 });
+function updateCart(productId,updateValue){
+  cart.forEach((cartitem) => {
+    if(cartitem.productId === productId){
+      
+      cartitem.quantity += updateValue;
+     
+      document.querySelector(`.js-quantity-label-${productId}`).innerHTML = `${cartitem.quantity}`;
+      document.querySelector('.total-cart-checkout').innerHTML = `${updateQunatityCheckout()} items`;
+     saveLocalStorage(); 
+    }
+  });
+}
 document.querySelectorAll('.confirm-update-link').forEach((saveLink) => {
   saveLink.addEventListener('click', () => {
     let productId = saveLink.dataset.productId;
-    console.log(productId);
+   
     document.querySelector(`.js-item-container-${productId}`).classList.remove('is-editing-quantity');
+    let updateValue = document.querySelector(`.js-input-${productId}`).value;
+    updateValue = Number(updateValue);
+    
+    updateCart(productId,updateValue);
   });
   // need to update the cart quantiy form the input elemt and add to cart
 });
