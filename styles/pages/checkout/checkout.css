@@ -211,16 +211,16 @@
 }
 .update-quantity-input{
   width : 30px;
-  border-radius : 5px;
+  border-radius : 3px;
   border : 1px solid black;
 }
-.update-quantity-input ,.confirm-update-link{
+.update-quantity-input ,.save-link{
   display:none;
 }
 .is-editing-quantity .update-quantity-input{
   display: initial;
 }
-.is-editing-quantity .confirm-update-link{
+.is-editing-quantity .save-link{
   display: initial;
 }
  .is-editing-quantity .update-quantity-link{
