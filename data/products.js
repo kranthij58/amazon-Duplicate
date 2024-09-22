@@ -669,7 +669,24 @@ export const products = [
       "mens"
     ]
   },
-  // no keywords added for the below prducts
+  /*
+  
+  
+  
+  
+  
+  
+  no keywords added for the below prducts and these are not added and included in the backend json files
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  */
   {
     id: "9bb12e8f-39c1-472d-a9f5-33e8dc82b0a7",
     image: "images/products/stainless steel waterbottle.png",
