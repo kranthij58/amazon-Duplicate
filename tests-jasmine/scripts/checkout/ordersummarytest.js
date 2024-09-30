@@ -33,14 +33,19 @@ import {loadFromStorage ,cart } from '../../../data/cart.js';
   const productId1 = 'e43638ce-6aa0-4b85-b27f-e1d07eb678c6';
   const productId2 = '15b6fc6f-327a-4ec4-896f-486349e85a3d';
 
+  const productName1 = "Black and Gray Athletic Cotton Socks - 6 Pairs";
+  const productName2 = "Intermediate Size Basketball";
+
+   
+
   afterEach(() => {
-    document.querySelector('.js-test-container').innerHTML = ``;
+   document.querySelector('.js-test-container').innerHTML = ``;
   });
   
   it('test case : display order summary' , () => {
    
    expect(document.querySelectorAll('.js-item-container').length).toEqual(2);
-
+   expect()
    
 
   });
@@ -60,11 +65,21 @@ import {loadFromStorage ,cart } from '../../../data/cart.js';
 
   expect(cart.length).toEqual(1);
   expect(cart[0].productId).toEqual(`${productId2}`);
+  
 
- 
 
   });
  
+  it('test case : checks if price tag contains dollar mark ' ,() => {
+    expect(
+      document.querySelector(`.js-price-${productId2}`).innerText)
+      .toContain('$');
+   
+  })
   
-
+  it('test case : name' , () => {
+    expect(
+      document.querySelector(`.js-product-name-${productId2}`).innerText)
+      .toEqual(productName2);
+  })
  });

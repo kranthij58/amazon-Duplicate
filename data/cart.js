@@ -1,3 +1,5 @@
+
+
 export let cart;
 export function loadFromStorage(){
   cart = JSON.parse(localStorage.getItem('cart'));
@@ -58,8 +60,10 @@ export function addToCart(productId,selectedQuantity){
       matchingItem = cartItem;
     }
   });
-
+ if(matchingItem){
   matchingItem.deliveryOptionId = deliveryOptionId;
 
   saveLocalStorage();
+ }
+  
 }
