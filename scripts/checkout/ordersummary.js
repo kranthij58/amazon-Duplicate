@@ -1,4 +1,4 @@
-import {cart, removeFromCart, saveLocalStorage,updateDeliveryOption} from '../../data/cart.js';
+import {cart, removeFromCart, saveLocalStorage,updateDeliveryOption, updateCart} from '../../data/cart.js';
 import {products, getProduct} from '../../data/products.js';
 import {formatCurrency} from '../utils/money.js';
 import dayjs from 'https://unpkg.com/dayjs@1.11.10/esm/index.js';
@@ -164,22 +164,11 @@ document.querySelectorAll('.save-link').forEach((link) => {
     updateValue = Number(updateValue);
     
     updateCart(productId , updateValue);
+    renderOrderSummary();
+    renderCheckoutHeader();
     renderPaymentSummary();
 
   });
 });
 
-function updateCart(productId , updateValue){
-  let matchingProduct;
-  cart.forEach((cartItem) => {
-    if(productId === cartItem.productId){
-     matchingProduct = cartItem;
-    }
-  });
-  matchingProduct.quantity += updateValue;
-  renderOrderSummary();
-  renderCheckoutHeader();
-
-}
-  
 }

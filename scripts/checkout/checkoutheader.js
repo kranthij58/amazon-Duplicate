@@ -3,7 +3,7 @@
   let totalCartItems = 0;
 
   cart.forEach((item) => {
-    totalCartItems += 1;
+    totalCartItems +=item.quantity;
   });
   document.querySelector('.total-cart-checkout').innerHTML = `${totalCartItems} items`;
 }
