@@ -53,7 +53,13 @@ class Clothing extends Product{
   }
   extraInfoHtml(){
     return `
-    <a href= "/images/clothing-size-chart.png"  target="_blank">
+    <a href= "/images/clothing-size-chart.png"  target="_blank"
+    style="color: black; text-decoration: none;" 
+   onmouseover="this.style.color='black';" 
+   onmouseout="this.style.color='black';" 
+   onmousedown="this.style.color='black';" 
+   onmouseup="this.style.color='black';"
+    >
     Size Chart
     </a>
     `;
