@@ -67,6 +67,45 @@ class Clothing extends Product{
 
 }
 
+class Appliance extends Product{
+    instructionsLink;
+    warrantyLink;
+    constructor(productDetails){
+      super(productDetails);
+      this.warrantyLink = productDetails.warrantyLink;
+      this.instructionsLink = productDetails.instructionsLink;
+    }
+    extraInfoHtml(){
+
+      return `
+      <a href= "/images/appliance-instructions.png"  target="_blank"
+    style="color: black; text-decoration: none;" 
+   onmouseover="this.style.color='black';" 
+   onmouseout="this.style.color='black';" 
+   onmousedown="this.style.color='black';" 
+   onmouseup="this.style.color='black';"
+    >
+    Instructions
+    </a>
+    <a href= "/images/appliance-warranty.png"  target="_blank"
+    style="color: black; text-decoration: none;" 
+   onmouseover="this.style.color='black';" 
+   onmouseout="this.style.color='black';" 
+   onmousedown="this.style.color='black';" 
+   onmouseup="this.style.color='black';"
+    >
+    Warranty
+    </a>
+      
+      
+      `;
+
+
+    }
+
+
+}
+
 
 export const products = [
   {
@@ -128,7 +167,8 @@ export const products = [
       "toaster",
       "kitchen",
       "appliances"
-    ]
+    ],
+    type: "appliance"
   },
   {
     id: "3ebe75dc-64d2-4137-8860-1f5a963e534b",
@@ -143,7 +183,8 @@ export const products = [
       "plates",
       "kitchen",
       "dining"
-    ]
+    ],
+    type: "appliance"
   },
   {
     id: "8c9c52b5-5a19-4bcb-a5d1-158a74287c53",
@@ -157,7 +198,8 @@ export const products = [
     keywords: [
       "kitchen",
       "cookware"
-    ]
+    ],
+    type: "appliance"
   },
   {
     id: "dd82ca78-a18b-4e2a-9250-31e67412f98d",
@@ -313,7 +355,8 @@ export const products = [
       "water boiler",
       "appliances",
       "kitchen"
-    ]
+    ],
+    type: "appliance"
   },
   {
     id: "6b07d4e7-f540-454e-8a1e-363f25dbae7d",
@@ -395,7 +438,8 @@ export const products = [
       "bathmat",
       "bathroom",
       "home"
-    ]
+    ],
+    type: "appliance"
   },
   {
     id: "4f4fbcc2-4e72-45cc-935c-9e13d79cc57f",
@@ -445,7 +489,8 @@ export const products = [
       "bins",
       "cans",
       "kitchen"
-    ]
+    ],
+    type: "appliance"
   },
   {
     id: "19c6a64a-5463-4d45-9af8-e41140a4100c",
@@ -541,7 +586,8 @@ export const products = [
     keywords: [
       "cooking set",
       "kitchen"
-    ]
+    ],
+    type: "appliance"
   },
   {
     id: "a434b69f-1bc1-482d-9ce7-cd7f4a66ce8d",
@@ -557,7 +603,8 @@ export const products = [
       "washroom",
       "mirrors",
       "home"
-    ]
+    ],
+    type: "appliance"
   },
   {
     id: "a45cfa0a-66d6-4dc7-9475-e2b01595f7d7",
@@ -618,7 +665,8 @@ export const products = [
       "coffeemakers",
       "kitchen",
       "appliances"
-    ]
+    ],
+    type: "appliance"
   },
   {
     id: "02e3a47e-dd68-467e-9f71-8bf6f723fdae",
@@ -678,7 +726,8 @@ export const products = [
       "food blenders",
       "kitchen",
       "appliances"
-    ]
+    ],
+    type: "appliance"
   },
   {
     id: "36c64692-677f-4f58-b5ec-0dc2cf109e27",
@@ -694,7 +743,8 @@ export const products = [
       "baking",
       "cookware",
       "kitchen"
-    ]
+    ],
+    type: "appliance"
   },
   {
     id: "aaa65ef3-8d6f-4eb3-bc9b-a6ea49047d8f",
@@ -1000,6 +1050,9 @@ export const products = [
 ].map((productDetails) => {
   if(productDetails.type==='clothing'){
     return new Clothing(productDetails);
+  }
+  if(productDetails.type === 'appliance'){
+    return new Appliance(productDetails);
   }
   return new Product(productDetails);
 
