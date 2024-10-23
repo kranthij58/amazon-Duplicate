@@ -15,7 +15,7 @@ export function getProduct(productId) {
 }
 
 
-class Product {
+export class Product {
  
   id;
   image;
@@ -41,11 +41,11 @@ class Product {
     return `$${formatCurrency(this.priceCents)}`;
   }
   extraInfoHtml(){
-    return '';
+    return '  ';
   }
 
 }
-class Clothing extends Product{
+export class Clothing extends Product{
   sizeChartLink;
   constructor(productDetails){
     super(productDetails);
@@ -67,7 +67,7 @@ class Clothing extends Product{
 
 }
 
-class Appliance extends Product{
+export class Appliance extends Product{
     instructionsLink;
     warrantyLink;
     constructor(productDetails){

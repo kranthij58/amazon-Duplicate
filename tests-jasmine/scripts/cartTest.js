@@ -21,7 +21,7 @@ describe('Test suite : Testing add to cart functionality .' , () => {
     
 
   });
-  it ('Test case 2 : Adding new producct to the cart ' , () => {
+  it ('Test case 2 : Adding new product to the cart ' , () => {
    
     spyOn(localStorage , 'getItem').and.callFake(() => {
       return JSON.stringify([]);
