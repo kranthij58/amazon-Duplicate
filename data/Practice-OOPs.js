@@ -16,7 +16,7 @@ class Car{
   }
   go(){
     if(this.isTrunkOpen===true){
-      return
+      return;
     }
     if(this.speed+5<=200){
       this.speed+=5;
