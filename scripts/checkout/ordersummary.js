@@ -1,4 +1,5 @@
-import {cart, removeFromCart, saveLocalStorage,updateDeliveryOption, updateCart} from '../../data/cart.js';
+//import {cart, removeFromCart, saveLocalStorage,updateDeliveryOption, updateCart} from '../../data/cart.js';
+import {cart } from '../../data/cart-class.js';
 import {products, getProduct} from '../../data/products.js';
 import {formatCurrency} from '../utils/money.js';
 import dayjs from 'https://unpkg.com/dayjs@1.11.10/esm/index.js';
@@ -10,7 +11,7 @@ import {renderCheckoutHeader} from './checkoutheader.js';
 export function renderOrderSummary() {
   let cartSummaryHTML = '';
 
-  cart.forEach((cartItem) => {
+  cart.cartItems.forEach((cartItem) => {
     const productId = cartItem.productId;
 
     const matchingProduct = getProduct(productId);
@@ -116,13 +117,13 @@ export function renderOrderSummary() {
     .forEach((link) => {
       link.addEventListener('click', () => {
         const productId = link.dataset.productId;
-        removeFromCart(productId);
+        cart.removeFromCart(productId);
 
         const container = document.querySelector(
           `.js-cart-item-container-${productId}`
         );
         container.remove();
-        saveLocalStorage();
+        cart.saveLocalStorage();
         renderCheckoutHeader();
         renderPaymentSummary();
 
@@ -134,7 +135,7 @@ export function renderOrderSummary() {
     .forEach((element) => {
       element.addEventListener('click', () => {
         const {productId, deliveryOptionId} = element.dataset;
-        updateDeliveryOption(productId, deliveryOptionId);
+        cart.updateDeliveryOption(productId, deliveryOptionId);
         renderOrderSummary();
         renderPaymentSummary();
       
@@ -163,7 +164,7 @@ document.querySelectorAll('.save-link').forEach((link) => {
     let updateValue = document.querySelector(`.update-quantity-link-${productId}`).value;
     updateValue = Number(updateValue);
     
-    updateCart(productId , updateValue);
+    cart.updateCart(productId , updateValue);
     renderOrderSummary();
     renderCheckoutHeader();
     renderPaymentSummary();

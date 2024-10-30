@@ -1,5 +1,6 @@
 import {products} from '../data/products.js';
-import {cart , addToCart} from '../data/cart.js';
+//import {cart , addToCart} from '../data/cart.js';
+import { cart } from '../data/cart-class.js';
 import formatCurrency from './utils/money.js';
 let productsGridHtml = "";
 document.addEventListener('DOMContentLoaded', () => {
@@ -61,7 +62,7 @@ products.forEach((product) => {
 
    function updateQunatity(){
     let totalCartQuantity = 0;
-    cart.forEach((item) => {
+    cart.cartItems.forEach((item) => {
       totalCartQuantity += item.quantity;
     });
     return totalCartQuantity;
@@ -81,7 +82,7 @@ document.querySelectorAll(".js-add-to-cart").forEach((button) => {
     
     // calling the addToCart function from cart.js
 
-    addToCart(productId,selectedQuantity);
+    cart.addToCart(productId,selectedQuantity);
     
    
    // displaying added message

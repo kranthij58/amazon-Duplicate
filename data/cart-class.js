@@ -97,15 +97,4 @@ class Cart{
 
 }
 
-
-const oldCart = new Cart('old-cart');
-
-const newCart = new Cart('new-cart');
-
-
-
-oldCart.addToCart('dd82ca78-a18b-4e2a-9250-31e67412f98d');
-
-console.log(oldCart);
-
-console.log(newCart);
+export const cart = new Cart('cart-class');
