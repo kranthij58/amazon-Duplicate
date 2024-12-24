@@ -1,9 +1,13 @@
 import { renderOrderSummary } from "../../../scripts/checkout/ordersummary.js";
-
+import { loadProducts } from "../../../data/products.js";
 import {loadFromStorage ,cart } from '../../../data/cart.js';
 
  describe('test suite : render order summary' , () => {
-
+ 
+  beforeAll((done) => {
+    loadProducts();
+    done();
+  });
   beforeEach(() => {
 
     document.querySelector('.js-test-container').innerHTML = `
@@ -26,8 +30,8 @@ import {loadFromStorage ,cart } from '../../../data/cart.js';
       }]);
     });
     loadFromStorage();
-
     renderOrderSummary();
+    
 
   });
   const productId1 = 'e43638ce-6aa0-4b85-b27f-e1d07eb678c6';

@@ -106,7 +106,32 @@ export class Appliance extends Product{
 
 }
 
+export let products;
 
+export function loadProducts(fun){
+  const xem = new XMLHttpRequest();
+  xem.addEventListener('load',() => {
+    products = JSON.parse(xem.response).map((productDetails) => {
+      if(productDetails.type==='clothing'){
+        return new Clothing(productDetails);
+      }
+      if(productDetails.type === 'appliance'){
+        return new Appliance(productDetails);
+      }
+      return new Product(productDetails);
+    
+    });
+    fun();
+    console.log(products);
+  })
+  xem.open('GET','https://supersimplebackend.dev/products');
+  xem.send();
+  
+}
+
+
+
+/*
 export const products = [
   {
     id: "e43638ce-6aa0-4b85-b27f-e1d07eb678c6",
@@ -777,14 +802,6 @@ export const products = [
       "mens"
     ]
   },
-  /*
-  
-  
-  
-  
-  
-  
-  no keywords added for the below prducts and these are not added and included in the backend json files
   
   
   
@@ -792,9 +809,13 @@ export const products = [
   
   
   
+  //no keywords added for the below prducts and these are not added and included in the backend json files
   
   
-  */
+  
+  
+  
+
   {
     id: "9bb12e8f-39c1-472d-a9f5-33e8dc82b0a7",
     image: "images/products/stainless steel waterbottle.png",
@@ -1047,13 +1068,6 @@ export const products = [
 },
 
 
-].map((productDetails) => {
-  if(productDetails.type==='clothing'){
-    return new Clothing(productDetails);
-  }
-  if(productDetails.type === 'appliance'){
-    return new Appliance(productDetails);
-  }
-  return new Product(productDetails);
+];
+*/
 
-});
