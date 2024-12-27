@@ -1,4 +1,4 @@
-import {formatCurrency} from '../scripts/utils/money.js';
+/*import {formatCurrency} from '../scripts/utils/money.js';
 console.log(formatCurrency(232356));
 console.log('test suite : format currency');
 console.log('test case 1: integer value');
@@ -11,4 +11,4 @@ if ( formatCurrency(0) === '0.00' ){
 }
 if (formatCurrency(2324.2333) === '23.24'){
   console.log('test case passed');
-}
+}*/

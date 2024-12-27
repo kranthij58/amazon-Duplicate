@@ -1,7 +1,6 @@
 import {products , loadProducts} from '../data/products.js';
 //import {cart , addToCart} from '../data/cart.js';
 import { cart } from '../data/cart-class.js';
-import formatCurrency from './utils/money.js';
 loadProducts(renderHomePage);
 function renderHomePage(){
 let productsGridHtml = "";

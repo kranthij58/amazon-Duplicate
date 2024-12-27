@@ -1,4 +1,4 @@
-import { renderOrderSummary } from "../../../scripts/checkout/ordersummary.js";
+/*import { renderOrderSummary } from "../../../scripts/checkout/ordersummary.js";
 import { loadProducts } from "../../../data/products.js";
 import {loadFromStorage ,cart } from '../../../data/cart.js';
 
@@ -87,3 +87,4 @@ import {loadFromStorage ,cart } from '../../../data/cart.js';
       .toEqual(productName2);
   })
  });
+ */

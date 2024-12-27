@@ -1,5 +1,4 @@
 
-import formatCurrency from './scripts/utils/money.js';
 
 
 export function getProduct(productId) {
@@ -38,7 +37,7 @@ export class Product {
 
   getPrice() {
 
-    return `$${formatCurrency(this.priceCents)}`;
+    return `$${(Math.round(this.priceCents) / 100).toFixed(2)}`;
   }
   extraInfoHtml(){
     return '  ';

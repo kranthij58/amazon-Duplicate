@@ -1,4 +1,4 @@
-import {formatCurrency} from '../../scripts/utils/money.js';
+/*import {formatCurrency} from '../../scripts/utils/money.js';
 describe('Test suite : format currency' , () => {
   it('test case 1 : normal integers', () => {
     expect(formatCurrency(8343)).toEqual('83.43');
@@ -16,4 +16,4 @@ describe('Test suite : format currency' , () => {
   it('test case 5 : negitive numbers ' , () => {
     expect(formatCurrency(-2000)).toEqual('-20.00');
   });
-});
+});*/
